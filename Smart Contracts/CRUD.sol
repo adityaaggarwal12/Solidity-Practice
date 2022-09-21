@@ -20,4 +20,14 @@ contract CRUD{
             }
         }
     }
+    function update(uint id ,string memory name) public {
+        for(uint i=0;i<users.length;i++){
+            if(users[i].id==id){
+                users[i].name=name;
+            }
+        }
+    }
+    function destroy(uint id) public {
+        delete users[id];
+    }
 } 
