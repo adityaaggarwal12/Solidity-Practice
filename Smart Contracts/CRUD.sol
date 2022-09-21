@@ -7,7 +7,7 @@ contract CRUD{
         string name;
     }
     User[] public users;
-    uint public nextId;
+    uint public nextId=1;
 
     function create(string memory name) public{
         users.push(User(nextId,name));
@@ -31,5 +31,6 @@ contract CRUD{
                 return i;
             }
         }
+        revert('User does not exist!');
     }
 } 
